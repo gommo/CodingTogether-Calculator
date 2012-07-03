@@ -20,6 +20,7 @@
 		3B2C861A15A19B9C00434A1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2C85FB15A19B9C00434A1A /* Foundation.framework */; };
 		3B2C862215A19B9C00434A1A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C862015A19B9C00434A1A /* InfoPlist.strings */; };
 		3B2C862515A19B9C00434A1A /* CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C862415A19B9C00434A1A /* CalculatorTests.m */; };
+		3B2C863015A2999500434A1A /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C862F15A2999500434A1A /* CalculatorBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		3B2C862115A19B9C00434A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B2C862315A19B9C00434A1A /* CalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorTests.h; sourceTree = "<group>"; };
 		3B2C862415A19B9C00434A1A /* CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorTests.m; sourceTree = "<group>"; };
+		3B2C862E15A2999500434A1A /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		3B2C862F15A2999500434A1A /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				3B2C860E15A19B9C00434A1A /* CalculatorViewController.h */,
 				3B2C860F15A19B9C00434A1A /* CalculatorViewController.m */,
 				3B2C860015A19B9C00434A1A /* Supporting Files */,
+				3B2C862E15A2999500434A1A /* CalculatorBrain.h */,
+				3B2C862F15A2999500434A1A /* CalculatorBrain.m */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				3B2C860615A19B9C00434A1A /* main.m in Sources */,
 				3B2C860A15A19B9C00434A1A /* CalculatorAppDelegate.m in Sources */,
 				3B2C861015A19B9C00434A1A /* CalculatorViewController.m in Sources */,
+				3B2C863015A2999500434A1A /* CalculatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
