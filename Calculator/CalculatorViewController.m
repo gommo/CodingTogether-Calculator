@@ -21,6 +21,7 @@
 @implementation CalculatorViewController
 
 @synthesize display;
+@synthesize toBrain;
 @synthesize userInInTheMiddleOfEnteringANumber;
 @synthesize enteringAFloatingPointNmber;
 @synthesize brain = _brain;
@@ -35,6 +36,7 @@
 - (void) reset {
     [self.brain clear];
     self.display.text = @"0";
+    self.toBrain.text = @"";
     self.userInInTheMiddleOfEnteringANumber = NO;
     self.enteringAFloatingPointNmber = NO;
 }
@@ -63,6 +65,7 @@
 }
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
+    self.toBrain.text = [[self.toBrain.text stringByAppendingString:self.display.text] stringByAppendingString:@" "]; 
     self.userInInTheMiddleOfEnteringANumber = NO;
     self.enteringAFloatingPointNmber = NO;
 }
@@ -74,10 +77,15 @@
     NSString* operation = [sender currentTitle];
     double result = [self.brain performOperation:operation];
     self.display.text = [NSString stringWithFormat:@"%g", result];
+    self.toBrain.text = [[self.toBrain.text stringByAppendingString:operation] stringByAppendingString:@" "];
 }
 
 - (IBAction)clearPressed:(id)sender {
     [self reset];
 }
 
+- (void)viewDidUnload {
+    [self setToBrain:nil];
+    [super viewDidUnload];
+}
 @end

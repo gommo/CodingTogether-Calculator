@@ -349,11 +349,18 @@
                                     <action selector="clearPressed:" destination="2" eventType="touchUpInside" id="gSK-eW-fX5"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="tTC-99-Xg9">
+                                <rect key="frame" x="20" y="418" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="display" destination="w8P-tb-uJv" id="4Sf-CU-265"/>
+                        <outlet property="toBrain" destination="tTC-99-Xg9" id="QcJ-iS-sux"/>
                     </connections>
                 </viewController>
             </objects>
@@ -364,6 +371,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculatorViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toBrain" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>
