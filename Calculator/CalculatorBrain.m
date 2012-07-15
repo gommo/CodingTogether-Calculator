@@ -59,10 +59,27 @@
             result = [self popOperand] / divisor;
         }
     }
+    else if ([operation isEqualToString:@"sin"]) {
+        result = sin([self popOperand]);
+    }
+    else if ([operation isEqualToString:@"cos"]) {
+        result = cos([self popOperand]);
+    }
+    else if ([operation isEqualToString:@"sqrt"]) {
+        result = sqrt([self popOperand]);
+    }
+    else if ([operation isEqualToString:@"π"]) {
+        result = [self popOperand] * atan(1.0f) * 4.0f;
+    }
     
     [self pushOperand:result];
     
     return result;
+}
+
+- (void) clear
+{
+    [self.operandStack removeAllObjects];
 }
 
 @end

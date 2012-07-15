@@ -13,6 +13,9 @@
 @property (nonatomic) BOOL userInInTheMiddleOfEnteringANumber;
 @property (nonatomic) BOOL enteringAFloatingPointNmber;
 @property (nonatomic, strong) CalculatorBrain* brain;
+
+- (void) reset;
+
 @end
 
 @implementation CalculatorViewController
@@ -27,6 +30,13 @@
         _brain = [[CalculatorBrain alloc]init];
     }
     return _brain;
+}
+
+- (void) reset {
+    [self.brain clear];
+    self.display.text = @"0";
+    self.userInInTheMiddleOfEnteringANumber = NO;
+    self.enteringAFloatingPointNmber = NO;
 }
 
 - (IBAction)digitPressed:(UIButton*)sender {
@@ -66,5 +76,8 @@
     self.display.text = [NSString stringWithFormat:@"%g", result];
 }
 
+- (IBAction)clearPressed:(id)sender {
+    [self reset];
+}
 
 @end
