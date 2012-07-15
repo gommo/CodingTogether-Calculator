@@ -11,6 +11,7 @@
 
 @interface CalculatorViewController ()
 @property (nonatomic) BOOL userInInTheMiddleOfEnteringANumber;
+@property (nonatomic) BOOL enteringAFloatingPointNmber;
 @property (nonatomic, strong) CalculatorBrain* brain;
 @end
 
@@ -18,6 +19,7 @@
 
 @synthesize display;
 @synthesize userInInTheMiddleOfEnteringANumber;
+@synthesize enteringAFloatingPointNmber;
 @synthesize brain = _brain;
 
 - (CalculatorBrain*)brain {
@@ -29,10 +31,21 @@
 
 - (IBAction)digitPressed:(UIButton*)sender {
     NSString* digit = [sender currentTitle];
+    
     if (self.userInInTheMiddleOfEnteringANumber) {
+        if ([digit isEqualToString:@"."]) {
+            if (self.enteringAFloatingPointNmber) {
+                return;
+            }
+            self.enteringAFloatingPointNmber = YES;
+        }
         self.display.text = [self.display.text stringByAppendingString:digit];
     }
     else {
+        if ([digit isEqualToString:@"."]) {
+            digit = @"0.";
+            self.enteringAFloatingPointNmber = YES;
+        }
         self.display.text = digit;
         self.userInInTheMiddleOfEnteringANumber = YES;
     }
@@ -41,6 +54,7 @@
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userInInTheMiddleOfEnteringANumber = NO;
+    self.enteringAFloatingPointNmber = NO;
 }
 
 - (IBAction)operationPressed:(id)sender {
